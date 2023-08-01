@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script src="canvasjs.min.js"> </script>
+	</head>
+	<body>
+		<div id="chart" style="height:50%; width:50%"></div>
+		<script type="text/javascript">
+			
+				var tit={text:"olympic medals", fontColor:"red", fontSize:30, verticalAlign:"top",  horizontalAlign:"center"};
+				
+				var axisy={title:"medal won", titleFontColor:"cyan", labelFontSize:30, labelPlacement:"inside"};
+				
+				var axisx={title:"country", titleFontColor:"cyan", labelFontSize:30, labelPlacement:"outside"};
+				
+				 var leg={ verticalAlign:"top",  horizontalAlign:"right"};
+				 
+				 var dt={type:"doughnut", showInLegend:true, legendText:"2010", dataPoints:[{label:"India", y:543}, {label:"china", y:336}, {label:"france", y:443}, {label:"germany",y:363}, {label:"russia", y:596}, {label:"usa",y:618}]};
+				 
+				 var chart=new CanvasJS.Chart("chart",{title:tit,axisX:axisx,axisY:axisy,legend:leg,data:[dt]});
+				 
+				 chart.render();
+		</script>
+		
+		
+	</body>
+</html>

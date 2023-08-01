@@ -1,0 +1,22 @@
+<html>
+<head>
+	<script src="https://www.gstatic.com/charts/loader.js"> </script>
+	<script type="text/javascript">
+		google.charts.load('current',{packages:['corechart']});
+		google.setOnLoadCallback(drawchart);
+		
+		function drawchart()
+		{
+			var dt=[['prod','Q1_sales','Q2_sales','Q3_sales','Q4_sales'],['shoes',40,50,60,55],['jacket',50,55,45,60],['caps',35,40,55,50]];
+			var data=google.visualization.arrayToDataTable(dt);
+			var option={hAxis:{title:"sales"},vAxis:{title:"product"},title:"information of sales",legend:"bottom",isStacked:'percent'};
+			var chart=new google.visualization.BarChart(document.getElementById('barchart'));
+			chart.draw(data,option);
+		}
+	</script>
+</head>
+<body>
+	<div id="barchart" style="width:50%; height:50%"></div>
+</body>
+</html>
+	

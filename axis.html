@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="d3.min.js"></script>
+</head>
+<body>
+</body>
+<script>
+var svg = d3.select('body')
+		  .append('svg')
+		  .attr('width',700)
+		  .attr('height',700);
+		  
+var myscale=d3.scaleLinear().domain([0,100]).range([0,300]);
+var glft=svg.append('g').attr('transform','translate(50,50)');
+var axl=d3.axisLeft(myscale);
+glft.call(axl);
+
+var myscale2=d3.scaleLinear().domain([100,200]).range([0,300]);
+var glft2=svg.append('g').attr('transform','translate(60,350)');
+var axl2=d3.axisBottom(myscale2);
+glft2.call(axl2);
+
+var myscale1=d3.scaleLinear().domain([300,200]).range([0,300]);
+var glft1=svg.append('g').attr('transform','translate(370,50)');
+var axl1=d3.axisRight(myscale1);
+glft1.call(axl1);
+
+var myscale3=d3.scaleLinear().domain([400,300]).range([0,300]);
+var glft3=svg.append('g').attr('transform','translate(60,50)');
+var axl3=d3.axisTop(myscale3);
+glft3.call(axl3);
+
+var myscale4=d3.scaleLinear().domain([-0.5,0.5]).range([0,300]);
+var glft4=svg.append('g').attr('transform','translate(300,500)');
+var axl4=d3.axisTop(myscale4);
+glft4.call(axl4);
+
+</script>
+</html>

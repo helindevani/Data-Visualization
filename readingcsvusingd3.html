@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script src="d3.min.js"></script>
+	</head>
+	<body>
+		<script>
+			d3.csv('http://127.0.0.1:8887/s1.csv').then(function(data)
+														{
+														console.log(data);
+														console.log(typeof(data));
+														console.log(Object.keys(data));
+														console.log(Object.values(data));
+														var dt=Object.values(data);
+														for(i=0;i<dt.length-1;i++)
+														{
+															document.write('<br>'+dt[i].Name+' '+dt[i].Age+' '+dt[i].email);
+														}
+														var d1=dt.filter((e)=>e.Age>30);
+														for(i=0;i<dt.length-1;i++)
+														{
+															document.write('<br>'+dt[i].Name+' '+d1[i].Age+' '+dt[i].email);
+														}
+														});
+		</script>
+    </body>
+</html>

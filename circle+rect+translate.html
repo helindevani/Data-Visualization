@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	<canvas id="c1" width="600" height="400">your bds canvas</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("c1");
+		if(canvas.getContext)
+		{
+			var ctx=canvas.getContext("2d");
+			ctx.beginPath();
+			ctx.fillStyle="red";
+			ctx.arc(50,50,20,Math.PI,2*Math.PI);
+			ctx.fill();
+			ctx.fillStyle="cyan";
+			ctx.fillRect(30,50,40,100);
+			ctx.beginPath();
+			ctx.fillStyle="red";
+			ctx.arc(50,150,20,2*Math.PI,3*Math.PI);
+			ctx.fill();
+			
+			ctx.translate(100,0);
+			
+			ctx.beginPath();
+			ctx.fillStyle="red";
+			ctx.arc(50,50,20,Math.PI,2*Math.PI);
+			ctx.fill();
+			ctx.fillStyle="cyan";
+			ctx.fillRect(30,50,40,100);
+			ctx.beginPath();
+			ctx.fillStyle="red";
+			ctx.arc(50,150,20,2*Math.PI,3*Math.PI);
+			ctx.fill();
+			
+
+		}
+		
+	</script>
+</body>
+</html>

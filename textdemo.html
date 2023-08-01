@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	<canvas id="c1" width="600" height="400">your bds canvas</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("c1");
+		if(canvas.getContext)
+		{
+			var ctx=canvas.getContext("2d");
+			
+			
+			ctx.font="30px Arial";
+			ctx.fillText("hello world",100,100);
+			
+			ctx.font="50px Arial";
+			ctx.strokeText("jay Gopal",200,200);
+		
+		}
+		
+	</script>
+</body>
+</html>

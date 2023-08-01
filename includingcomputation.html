@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<script src="jquery-3.6.4.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('table').append('<tfoot>');
+				$('tfoot').append('<tr>');
+				$('tfoot tr').append('<th>');
+				$('tfoot tr th').html('sum');
+				gt=0;
+				$('.balance').each(function(){
+												v=parseFloat($(this).html());
+												gt += v;});
+				$('tfoot tr').append('<td>');
+				$('tfoot tr td').html(gt);
+				$('table').append('</td></tr></tfoot>');
+		
+							});
+		</script>
+	</head>
+	<body>
+	<table border="10px">
+		<caption> </caption>
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Balance</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Mike</td>
+				<td class='balance'>150</td>
+			</tr>
+			<tr>
+				<td>Mike</td>
+				<td class='balance'>160</td>
+			</tr>
+			<tr>
+				<td>Mike</td>
+				<td class='balance'>142</td>
+			</tr>
+			<tr>
+				<td>Mike</td>
+				<td class='balance'>250</td>
+			</tr>
+			<tr>
+				<td>Mike</td>
+				<td class='balance'>300</td>
+			</tr>
+		</tbody>
+		
+		</table>
+	</body>
+</html>

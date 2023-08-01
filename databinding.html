@@ -1,0 +1,17 @@
+<html>
+<head>
+<script src="d3.min.js"></script>
+</head>
+<body>
+<span>
+</span>
+</body>
+<script>
+var mydata = [2,4,1,6,9,8];
+var ptag=d3.select('body').selectAll('span');
+ptag.data(mydata).enter().append('span').merge(ptag).text((d)=>d).style('color',function(d){if(d%2==0)
+																							{return 'red';}
+																							else
+																							{return 'blue';}}).style('font-size','50px');
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	<canvas id="c1" width="800" height="600">your bds canvas</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("c1");
+		if(canvas.getContext)
+		{
+			var ctx=canvas.getContext("2d");
+			var i;
+			ctx.translate(400,300);
+			for(i=1;i<=36;i++)
+			{	
+			
+			ctx.rotate(10*Math.PI/180);
+			ctx.strokeStyle="cyan";
+			ctx.strokeRect(100,100,50,100);
+			}	
+}</script>
+</body>
+</html>

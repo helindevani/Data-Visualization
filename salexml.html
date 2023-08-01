@@ -1,0 +1,39 @@
+<html>
+<head>
+
+	<script src="jquery-3.6.4.min.js"></script>
+	<script>
+	$(document).ready(function(){
+										$('#loading').click(function(){$.get('http://127.0.0.1:8887/sale.xml',function(data,status)
+																		{
+																			var row="";var r,a,e;
+																				$(data).find('sales').each(
+																					function()
+																					{
+																	r=$(this).find('region').text();
+																	e=$(this).find('employees').text();
+																	a=$(this).find('amount').text();
+																	
+																	row+="<tr><td>"+r+"</td><td>"+e+"</td><td>"+a+"</td></tr>";
+																												
+																					}
+																											);
+																			$('table').html(row);
+																		}
+										
+																			);
+										
+																		}
+															);
+							    } 
+					  );
+	</script>
+</head>
+<body>
+	
+	<button id="loading"> LoadFile </button>
+	<table border="1px">
+	</table>
+	
+</body>
+</html>

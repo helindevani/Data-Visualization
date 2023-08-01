@@ -1,0 +1,44 @@
+<html>
+<head>
+
+	<script src="jquery-3.6.4.min.js"></script>
+	<script>
+	$(document).ready(function(){
+										$('#loading').click(function(){$.get('http://127.0.0.1:8887/sales.json',function(data,status)
+																		{
+																					var row="";var r,a,e;
+																					console.log(data);
+																					console.log(data.sale);
+																				console.log(data.sale.length);
+																					for(i=0;i<data.sale.length;i++)
+																					{
+																						r=data.sale[i].region;
+																						e=data.sale[i].emloyee;
+																						a=data.sale[i].amount;
+																						
+																						row+="<tr><td>"+r+"</td><td>"+e+"</td><td>"+a+"</td></tr>";
+																					}
+																					
+																					$('table').html(row);																									
+																		}
+										
+																			);
+										
+																		}
+															);
+							    } 
+					  );																		{"sale":[{"region":"north","emloyee":150,"amount":115000},
+																								{"region":"north","emloyee":150,"amount":115000},
+																								{"region":"north","emloyee":150,"amount":115000},
+																								{"region":"north","emloyee":150,"amount":115000}]}
+
+	</script>
+</head>
+<body>
+	
+	<button id="loading"> LoadFile </button>
+	<table border="1px">
+	</table>
+	
+</body>
+</html>

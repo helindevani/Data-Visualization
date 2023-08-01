@@ -1,0 +1,47 @@
+<html>
+	<head>
+	<script src="jquery-3.6.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.3.3/highcharts.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highchartTable/2.0.0/jquery.highchartTable.min.js"></script>
+
+	</head>
+	<body>
+	<script>
+		$(document).ready(function(){$('#table').highchartTable();});
+	
+	</script>
+	<table id="table" data-graph-container-before="1" data-graph-type="column">
+		
+		<thead>
+			<tr>
+				<th >Month</th>
+				<th>Sales</th>
+				<th>profit</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>jan</td>
+				<td>5000</td>
+				<td>3000</td>
+			</tr>
+			<tr>
+				<td>feb</td>
+				<td>20000</td>
+				<td>4000</td>
+			</tr>
+			<tr>
+				<td>march</td>
+				<td>10000</td>
+				<td>5000</td>
+			</tr>
+			<tr>
+				<td>apr</td>
+				<td>8000</td>
+				<td>3000</td>
+			</tr>
+			
+		</table>
+	</body>
+</html>

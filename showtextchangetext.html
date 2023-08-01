@@ -1,0 +1,20 @@
+<html>
+<head>
+	<script src="jquery-3.6.4.min.js"></script>
+	<script>
+		var t1="<h1> HELLO WORLD </h1>";
+		$(document).ready(function(){
+										$('#showText').click(function(){$('body').append(t1)});
+										$('#ChangeText').click(function(){$('h1').text('<h1>my name is brijesh</h1>')});
+										$('#HtmlText').click(function(){$('h1').html('<p><b>my</b><i>brijesh</i></p>')});
+									});
+	</script>
+</head>
+<body>
+	
+	<button id="showText"> showText </button>
+	<button id="ChangeText"> ChangeText</button>
+	<button id="HtmlText"> HtmlText </button>
+	
+</body>
+</html>

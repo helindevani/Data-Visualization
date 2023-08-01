@@ -1,0 +1,14 @@
+<html>
+<head>
+<script src="d3.min.js"></script>
+</head>
+<body>
+</body>
+<script>
+
+var myArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+var toKeep = ['B', 'C', 'G', 'O', 'Z'];
+filtArray = myArray.filter( ( el ) =>toKeep.includes( el ));
+document.write("Filtered Array is:" + filtArray + "<br/>")
+</script>
+</html>

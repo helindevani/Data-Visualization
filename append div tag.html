@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<script src="d3.min.js"></script>
+	</head>
+	<body>
+	
+	<script>
+		d3.select('body').append('div').attr('id','mydiv').attr('class','myclass').style('width','200px').text("good morning").style('height','200px').style('background-color','blue').style('color','white').style('font-size','50px');
+		
+		var arr=[12,34,23,30,12,89];
+		document.write("Array is"+arr);
+		
+		var min_no=d3.min(arr);
+		document.write("<br/> MIN Array is"+min_no);
+		
+		a1=d3.sort(arr);
+		document.write("<br/> Sorted Array is"+a1);
+		
+		a2=d3.sort(arr,(a,b)=> b-a);
+		document.write("<br/>Reverse Sorted Array is"+a2);
+		
+		var emp=[{name:'john',salary:'9000',hiredt:'july 1,2020'},
+				{name:'david',salary:'7000',hiredt:'july 30,2020'},
+				{name:'jems',salary:'10000',hiredt:'may 1,2020'}];
+				
+		var s=d3.sort(emp,(a,b)=> b.salary-a.salary);
+		for( i=0;i<emp.length;i++)
+		{
+			document.write("<br/>name:"+emp[i].name+" salary :"+s[i].salary +"hiredt is:"+emp[i].hiredt);
+		}
+		
+		var n=d3.sort(emp,(d)=> d.name);
+		for( i=0;i<emp.length;i++)
+		{
+			document.write("<br/>name:"+n[i].name+" salary :"+s[i].salary +"hiredt is:"+emp[i].hiredt);
+		}
+	</script>
+	</body>
+</html>

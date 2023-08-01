@@ -1,0 +1,54 @@
+<html>
+<head>
+<script src="d3.min.js"></script>
+</head>
+<body><div style="float:left;height:100px;width:100px;background-color:blue;margin-right:10px;color:white;" id="div1">
+2021
+</div> 
+<div style="float:left;height:100px;width:100px;background-color:red;color:white;margin-right:10px;" id="div2">
+2022
+</div>
+<div style="float:left;height:100px;width:100px;background-color:cyan;color:white;margin-right:10px;" id="div3">
+2023
+</div>
+<div style="float:left;height:100px;width:100px;background-color:purple;color:white;margin-right:10px;" id="div4">
+playall
+</div>
+<div onclick="pauseall()" style="float:left;height:100px;width:100px;background-color:blue;color:white;" id="div5">
+pause
+</div>
+<div style="clear:left;">
+<svg height="1000px" width="1000px"><text></text>
+</svg>
+</div>
+</body>
+<script>
+var data2021=[40,10,30,20,50];
+var data2022=[15,30,25,40];
+var data2023=[20,40,25,50,35,12];
+d3.select('#div1').on('click',function(){update(data2021,'orange',2021,50)});
+d3.select('#div2').on('click',function(){update(data2022,'cyan',2022,160)});
+d3.select('#div3').on('click',function(){update(data2023,'red',2023,270)});
+d3.select('#div4').on('click',updateall);
+function update(mydata,col,yr,cx)
+{
+	d3.select('svg').selectAll('circle').data(mydata).join('circle').attr('cx',cx).attr('cy',(d,i)=>(i+1)*100).transition().attr('r',(d)=>d).attr('fill',col);
+	
+	d3.select('svg').select('text').attr('x',500).attr('y',600).text(yr+" ").attr('fill',col);
+}
+var c1,c2,c3;
+function updateall()
+{
+	 c1=setTimeout(update,2000,data2021,'orange',2021,50);
+	 c2=setTimeout(update,7000,data2022,'grey',2022,160);
+	 c3=setTimeout(update,12000,data2023,'cyan',2023,270);
+}
+function pauseall()
+{
+	clearInterval(c1);
+	clearInterval(c2);
+	clearInterval(c3);
+}
+
+</script>
+<html>

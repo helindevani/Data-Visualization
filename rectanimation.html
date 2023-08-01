@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	<canvas id="c1" width="600" height="400">your bds canvas</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("c1");
+		if(canvas.getContext)
+		{
+			var ctx=canvas.getContext("2d");
+			
+			var x=10; var y=10;
+			 var endx=canvas.width-50;
+			 var endy=canvas.height-50;
+			 
+			 function update_xy()
+			 {
+				x=x+0.1;
+				y=y+0.1;
+				if(x<endx && y<endy)
+					requestAnimationFrame(draw);
+			 }
+			 
+			  function draw()
+			 {
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+				ctx.fillStyle="cyan";
+				ctx.fillRect(x,10,100,100);
+				ctx.fillStyle="red";
+				ctx.fillRect(10,y,100,100);
+				ctx.fillStyle="pink";
+				ctx.fillRect(x,y,100,100);
+			 }
+			 
+			requestAnimationFrame(draw);
+			setInterval(update_xy,1);
+			}
+	</script>
+</body>
+</html>

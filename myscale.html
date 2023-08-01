@@ -1,0 +1,20 @@
+<html>
+<head>
+<script src="d3.min.js"></script>
+</head>
+<body>
+</body>
+<script>
+
+var svg = d3.select('body')
+		  .append('svg')
+		  .attr('width',700)
+		  .attr('height',700);
+var mn=['jan','feb','march','may'];
+var col=[10,60,110,160];
+var s=d3.scaleOrdinal().domain(mn).range(col);
+var glft2=svg.append('g').attr('transform','translate(50,50)');
+var axl2=d3.axisLeft(s);
+glft2.call(axl2);
+</script>
+</html>

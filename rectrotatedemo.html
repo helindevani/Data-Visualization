@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	<canvas id="c1" width="600" height="400">your bds canvas</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("c1");
+		if(canvas.getContext)
+		{
+			var ctx=canvas.getContext("2d");
+				
+			ctx.fillStyle="Grey";
+			ctx.fillRect(300,300,75,100);
+			ctx.rotate(10*Math.PI/180);
+			ctx.fillStyle="cyan";
+			ctx.fillRect(300,300,75,100);
+			
+			
+
+		}
+		
+	</script>
+</body>
+</html>

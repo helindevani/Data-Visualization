@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<script src="canvasjs.min.js"> </script>
+	</head>
+	<body>
+		<div id="chart" style="height:50%; width:50%"></div>
+		<script type="text/javascript">
+			
+				var tit={text:"bubble chart", fontColor:"red", fontSize:30, verticalAlign:"top",  horizontalAlign:"center"};
+				
+				var axisy={title:"Fertility rate",titleFontColor:"cyan", labelFontSize:10, labelPlacement:"outside"};
+				
+				var axisx={title:"Life Expectency", interval:10,labelAngle:45,titleFontColor:"cyan", labelFontSize:10, labelPlacement:"outside",includeZero:true};
+				
+				 var leg={ verticalAlign:"top",  horizontalAlign:"right"};
+				 
+				 var dt1={type:"bubble", showInLegend:true, legendText:"size of bubble Representation population in million", dataPoints:[{x:168.3, y:2.4,z:1309.5,name:"India"}, 
+																																																{x:158.3, y:3.4,z:1409.5,name:"usa"}, 
+																																																{x:148.3, y:4.4,z:1209.5,name:"uk"}, 
+																																																{x:138.3, y:5.4,z:1109.5,name:"china"}, 
+																																																{x:128.3, y:6.4,z:1009.5,name:"canada"}],
+								legendMarkerType:"circle",toolTipContent:"{name}<br/> Life Expectency:{x} yrs.<br/> FertilityRate: {y} yrs.<br/> population:{z} million"};
+				  
+				  var chart=new CanvasJS.Chart("chart",{title:tit,axisX:axisx,axisY:axisy,legend:leg,data:[dt1], animationEnabled:true,  animationDuration:5000, theme:"dark1"});
+				 
+				 chart.render();
+		</script>
+		
+		
+	</body>
+</html>

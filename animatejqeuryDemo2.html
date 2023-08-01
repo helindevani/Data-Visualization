@@ -1,0 +1,90 @@
+<html>
+<head>
+	<style>
+	.div12
+	{
+		background-color:blue;
+		 height:100px;
+		 width:100px;
+		 position:relative;  
+	}
+	</style>
+	
+	<script src="jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+										$('#left').click(function(){$('#div1').animate
+										( 
+											{
+												left:'-=250px',
+												opacity:'0.5',
+											}
+										)
+										});
+										
+										$('#right').click(function(){$('#div1').animate
+										( 
+											{
+												left:'+=250px',  //right ma left j use karvanu nut += aapvanu aetale left mathi right ma 250
+																//aavshe
+												opacity:'0.5',
+											}
+										)
+										});
+										
+											$('#top').click(function(){$('#div1').animate
+										( 
+											{
+												top:'-=250px',
+												opacity:'0.5',
+											}
+										)
+										});
+										
+											$('#down').click(function(){$('#div1').animate
+										( 
+											{
+												top:'+=250px',  //down ma top j use karvanu khali+= karvanu.
+												opacity:'0.5',
+											}
+										)
+										});
+										
+											$('#plusopacity').click(function(){$('#div1').animate
+										( 
+											{
+												opacity:'+=0.3',
+											}
+										)
+										});
+										
+											$('#negopacity').click(function(){$('#div1').animate
+										( 
+											{
+												opacity:'-=0.3',
+											}
+										)
+										});
+									});
+	</script>
+</head>
+<body>
+	<div id="div1" class="div12">
+	</div>
+	
+
+	
+	<button id="left"> L </button>
+	
+	<button id="right"> R </button>
+	
+	<button id="top" > T </button> 
+	
+	<button id="down"> D </button>
+	
+	<button id="plusopacity"> P </button>
+		
+	<button id="negopacity"> N </button>
+	
+</body>
+</html>

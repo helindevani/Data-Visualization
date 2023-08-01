@@ -1,0 +1,22 @@
+<html>
+<head>
+	<script src="https://www.gstatic.com/charts/loader.js"> </script>
+	<script type="text/javascript">
+		google.charts.load('current',{packages:['corechart']});
+		google.setOnLoadCallback(drawchart);
+		
+		function drawchart()
+		{
+			var dt=[['subject','marks',{role:'style'},{role:'annotation'}],['Maths',80,'color:red','80'],['Enlish',82,'fill-color:#C5AFCF;fill-opacity:0.5','80'],['Science',50,'stroke-color:blue;stroke-width:4;fill-opacity:0.6;fill-color:#BC56789','50']];
+			var data=google.visualization.arrayToDataTable(dt);
+			var option={title:"Europe language Speakers(in million)",pieSliceText:'label',legend:'none',is3D:true,animation:{startup:true,duration:2000,easing:'inAndOut'}};
+			var chart=new google.visualization.ColumnChart(document.getElementById('barchart'));
+			chart.draw(data,option);
+		}
+	</script>
+</head>
+<body>
+	<div id="barchart" style="width:50%; height:50%"></div>
+</body>
+</html>
+	

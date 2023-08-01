@@ -1,0 +1,35 @@
+<html>
+<head>
+	<style>
+	.div12
+	{
+		background-color:blue;
+		 height:100px;
+		 width:100px;
+		 position:relative;  //animation aapva mate aa farijiyat lakhvu padshe...
+	}
+	</style>
+	
+	<script src="jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+										$('#animation').click(function(){$('#div1').animate
+										( 
+											{
+												left:'+=250px',
+												opacity:'0.5',
+											}
+										)
+										});
+									});
+	</script>
+</head>
+<body>
+	<div id="div1" class="div12">
+	</div>
+	
+	<button id="animation"> Animate </button>
+	
+	
+</body>
+</html>

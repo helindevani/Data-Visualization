@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<script src="jquery-3.6.4.min.js"></script>
+		<style>
+			tbody 
+			{
+				color:white;
+				background-color:blue;
+			}
+			tbody tr:nth-child(even)
+			{
+				background-color:lightblue;
+			}
+			tbody th
+			{
+				background-color:orange;
+				color:black;
+			}
+			.current-row
+			{
+				background-color:white;
+				color:red;
+			}
+			.current-col
+			{
+				background-color:black;
+				color:hotpink;
+			}
+		</style>
+		<script>
+$(document).ready(function(){
+		$('tbody tr').hover(function(){$(this).addClass('current-row')},function(){$(this).removeClass('current-row')});
+		$('th,td').hover(function(){var i=$(this).index()+1;
+									var ind='('+i+')';
+									$('table tbody td,table tbody th').filter(':nth-child'+ind).addClass('current-col');},
+						function(){var i=$(this).index()+1;
+									var ind='('+i+')';
+									$('table tbody td,table tbody th').filter(':nth-child'+ind).removeClass('current-col');});
+							});
+		</script>
+	</head>
+	<body>
+		<table border="10px">
+		<caption> </caption>
+		<colgroup>
+			<col style="background-color:orange;"></col>
+		</colgroup>
+		<thead style="background-color:pink;">
+			<tr>
+				<th scope="col">Region</th>
+				<th scope="col">Sales</th>
+				<th scope="col">Mean</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">North</th>
+				<td>10,000</td>
+				<td>150</td>
+			</tr>
+			<tr>
+				<th scope="row">South</th>
+				<td>30,000</td>
+				<td>160</td>
+			</tr>
+			<tr>
+				<th scope="row">West</th>
+				<td>12,000</td>
+				<td>142</td>
+			</tr>
+			<tr>
+				<th scope="row">east</th>
+				<td>35,000</td>
+				<td>250</td>
+			</tr>
+			<tr>
+				<th scope="row">South-west</th>
+				<td>25,000</td>
+				<td>300</td>
+			</tr>
+		</tbody>
+		<tfoot style="background-color:yellow;">
+			<tr>
+				<th scope="row">Sum</th>
+				<td colspan="2">1,12,500</td>
+			</tr>
+		</tfoot>
+		</table>
+	</body>
+</html>

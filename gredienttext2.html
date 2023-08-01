@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	<canvas id="c1" width="600" height="400">your bds canvas</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("c1");
+		if(canvas.getContext)
+		{
+			var ctx=canvas.getContext("2d");
+			
+			var grad=ctx.createLinearGradient(400,400,0,0);
+			
+			grad.addColorStop(0,"violet");
+			grad.addColorStop(0.2,"indigo");
+			grad.addColorStop(0.4,"blue");
+			grad.addColorStop(0.6,"green");
+			grad.addColorStop(0.8,"purple");
+			grad.addColorStop(0.9,"orange");
+			grad.addColorStop(1,"red");
+				
+			ctx.fillStyle=grad;
+			ctx.font="30px Arial";
+			ctx.fillText("have a nice day!",50,50);
+				ctx.fillText("have a nice day!",150,150);
+					ctx.fillText("have a nice day!",250,250);
+						ctx.fillText("have a nice day!",350,350);
+
+		}
+		
+	</script>
+</body>
+</html>

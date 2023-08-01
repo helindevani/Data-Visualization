@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<script src="d3.min.js"></script>
+	</head>
+	<body>
+		<script>
+			d3.csv('http://127.0.0.1:8887/sales.json').then(function(data)
+														{
+														console.log(data);
+														console.log(typeof(data));
+														console.log(Object.keys(data));
+														console.log(Object.values(data));
+														var dt=Object.values(data);
+														for(i=0;i<dt.length-1;i++)
+														{
+															document.write('<br>'+dt[i].sale.region+' '+dt[i].emloyee+' '+dt[i].amount);
+														}
+														});
+		</script>
+    </body>
+</html>

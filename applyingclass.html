@@ -1,0 +1,44 @@
+<html>
+<head>
+<script src="d3.min.js"></script>
+<style>
+	.high{
+			fill:orange;
+			opacity:0.7;
+	}
+	.low{
+			fill:blue;
+			opacity:0.5;
+	}
+	.normal{
+			fill:grey;
+			opacity:0.2;
+	}
+</style>
+</head>
+<body>
+</body>
+<script>
+var svg = d3.select('body')
+		  .append('svg')
+		  .attr('width',700)
+		  .attr('height',700)
+var mydata = [20,40,30,50,35,10];
+var circletag = svg.selectAll('circle');
+circletag.data(mydata)
+	   .enter()
+	   .append('circle')
+	   .merge(circletag)
+	   .attr('cy',120)
+	   .attr('r',(d)=>d)
+	   .attr('cx',(d,i)=>(i+1)*100)
+	   .attr('class',function(d){
+								   if(d == d3.max(mydata))
+								   return 'high';
+								   else if (d == d3.min(mydata))
+								   return 'low';
+								   else
+								   return 'normal';
+	   })
+</script>
+</html>

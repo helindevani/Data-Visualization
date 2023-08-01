@@ -1,0 +1,37 @@
+<html>
+<head>
+	<style>
+	.div12
+	{
+		background-color:blue;
+		 height:100px;
+		 width:100px;
+	}
+	.div23
+	{
+		background-color:red;
+		 height:100px;
+		 width:100px;
+	}
+	</style>
+	
+	<script src="jquery-3.6.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+										$('#div1').click(function(){$('#div2').hide()});
+										$('#div1').click(function(){$('#div2').fadeIn(2000)});
+										$('#div2').click(function(){$('#div1').fadeOut(3000)});
+									});
+	</script>
+</head>
+<body>
+	<div id="div1" class="div12">
+		<h1 align="center"> blue</h1>
+	</div>
+	
+	<div id="div2" height="100px" width="100px" class="div23">
+		<h1 align="center"> red </h1>
+	</div>
+	
+</body>
+</html>

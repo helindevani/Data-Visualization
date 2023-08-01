@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<script src="canvasjs.min.js"> </script>
+	</head>
+	<body>
+		<div id="chart" style="height:50%; width:50%"></div>
+		<script type="text/javascript">
+			
+				var tit={text:"MultiSeries Chart", fontColor:"red", fontSize:30, verticalAlign:"top",  horizontalAlign:"center"};
+				
+				var axisy={title:"Sales", titleFontColor:"cyan", labelFontSize:10, labelPlacement:"outside"};
+				
+				var axisx={title:"Fruits", titleFontColor:"cyan", labelFontSize:10, labelPlacement:"outside"};
+				
+				 var leg={ verticalAlign:"top",  horizontalAlign:"right"};
+				 
+				 var dt1={type:"bar", showInLegend:true, legendText:"First Quarter", dataPoints:[{label:"banana", y:58}, {label:"orange", y:69}, {label:"apple", y:80}, {label:"mango",y:74}, {label:"graps", y:64}, {label:"watermelon",y:100}]};
+				 
+				  var dt2={type:"bar", showInLegend:true, legendText:"Second Quarter", dataPoints:[{label:"banana", y:63}, {label:"orange", y:73}, {label:"apple", y:88}, {label:"mango",y:77}, {label:"graps", y:60}, {label:"watermelon",y:80}]};
+				  
+				 
+				 var chart=new CanvasJS.Chart("chart",{title:tit,axisX:axisx,axisY:axisy,legend:leg,data:[dt1,dt2], animationEnabled:true,  animationDuration:5000, theme:"dark1"});
+				 
+				 chart.render();
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+	<canvas id="c1" width="600" height="400">your bds canvas</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("c1");
+		if(canvas.getContext)
+		{
+			var ctx=canvas.getContext("2d");
+			
+			ctx.strokeStyle="cyan";
+			ctx.lineWidth=10;
+			 var a=0.1;
+			 
+			 function update_angle()
+			 {
+			
+				if(a<2)
+				{	a=a+0.001;
+					requestAnimationFrame(draw);
+					}
+			 }
+			 
+			  function draw()
+			 {
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+				ctx.beginPath();
+				ctx.arc(200,200,100,0,a*Math.PI);
+				ctx.stroke();
+			 }
+			 requestAnimationFrame(draw);
+			setInterval(update_angle,1);
+		}
+	</script>
+</body>
+</html>

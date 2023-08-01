@@ -1,0 +1,31 @@
+<html>
+<head>
+
+	<script src="jquery-3.6.4.min.js"></script>
+	<script>
+	$(document).ready(function(){
+										$('#loading').click(function(){$.get('http://127.0.0.1:8887/sample.xml',function(data,status)
+																		{
+																				$(data).find('list').each(
+																					function()
+																					{
+																	$('#container').append('<p>	Name:' + $(this).find('name').text()+'price:'+$(this).find('price').text()+'</p>'
+																												);
+																					}
+																					
+																				);
+																		}
+										
+																	);
+										
+										});
+							});
+	</script>
+</head>
+<body>
+	
+	<button id="loading"> LoadFile </button>
+	<p id="container"> </p>
+	
+</body>
+</html>
